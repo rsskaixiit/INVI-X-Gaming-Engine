@@ -430,9 +430,7 @@ public sealed class MainViewModel : ObservableObject
         AppendLog("Telemetry: Win32 GetSystemTimes / GlobalMemoryStatusEx (real values).");
         AppendLog($"Backups:   {_backup.BackupDirectory}");
         AppendLog(IsAdministrator
-            ? (IsUacEnabled
-                ? "Privilege: elevated - all tuning steps are available."
-                : "Privilege: elevated (UAC disabled on this PC) - all tuning steps are available.")
+            ? "Privilege: elevated - all tuning steps are available."
             : "Privilege: standard user - HKLM steps will be skipped. Use RUN AS ADMIN for the full profile.");
         AppendLog("F6 toggles the gaming profile. ESC exits the panel.");
         AppendLog("Note: INVI X reports measured state only and makes no latency or FPS guarantees.");

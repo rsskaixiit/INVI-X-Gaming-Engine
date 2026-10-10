@@ -11,7 +11,7 @@ safe, fully reversible Windows gaming tweaks.
 **Recommended (hardened, self-contained):**
 
 ```
-C:\Users\Samrat Prince !!\Desktop\Creations\publish\win-x64\INVIX.exe
+<project-folder>\publish\win-x64\INVIX.exe
 ```
 
 This is a single ~68 MB file with the .NET runtime bundled in — it needs **no** .NET install,
@@ -26,7 +26,7 @@ if the assembly is modified or a debugger is attached). Build it with:
 **Normal development build:**
 
 ```
-C:\Users\Samrat Prince !!\Desktop\Creations\src\INVIX.App\bin\Release\net8.0-windows\INVIX.exe
+<project-folder>\src\INVIX.App\bin\Release\net8.0-windows\INVIX.exe
 ```
 
 > Use a **Release** build. If that folder does not exist yet, build first (see section 4).
@@ -72,7 +72,7 @@ You can also launch it with the helper script from the project root:
 - **Administrator rights are required** for the HKLM steps (MMCSS `SystemResponsiveness`,
   `NetworkThrottlingIndex`, `Win32PrioritySeparation`, and the Games task). Without admin,
   those specific steps are skipped and reported as failed in the log — nothing is faked.
-- This PC has UAC disabled, so the app already runs elevated and the button shows `ELEVATED`.
+- In an already-elevated session the button shows `ELEVATED` and fewer admin steps are needed.
 
 ### Displays
 - Minimum window size 620 × 400 (default). Resizable. Runs on 100%–200% DPI scaling.

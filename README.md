@@ -113,25 +113,19 @@ rather than invented.
 ## Prerequisites
 
 * **Windows 10 or 11.**
-* **.NET 8 Desktop Runtime** (`Microsoft.WindowsDesktop.App` 8.x).
-  The app targets `net8.0-windows`.
-  * Already installed here: `Microsoft.WindowsDesktop.App 8.0.31`.
-* To **build**: a .NET SDK. This machine has **.NET SDK 10.0.401** only. The SDK can build
-  `net8.0-windows` fine (verified), so no extra install is required to build.
-  * If you prefer to build with the exact .NET 8 SDK, install **.NET 8 SDK**.
+* **.NET 8 Desktop Runtime** (`Microsoft.WindowsDesktop.App` 8.x) - needed only for the
+  framework-dependent development build. The published `INVIX.exe` is self-contained.
+* To **build**: a .NET SDK that supports `net8.0-windows` (**.NET 8 SDK or newer** -
+  newer SDKs such as 10.x build this solution fine).
 * Optional: **Visual Studio 2022** with the *.NET desktop development* workload
   (open `INVIX.sln`).
-
-> There is **no .NET 8 SDK** on this machine - only the .NET 10 SDK. That is not a
-> blocker: the .NET 10 SDK builds and tests this `net8.0-windows` solution, and the
-> .NET 8 desktop runtime is present to run it.
 
 ---
 
 ## Build
 
 ```powershell
-cd "C:\Users\Samrat Prince !!\Desktop\Creations"
+cd <project-folder>
 dotnet restore .\INVIX.sln
 dotnet build   .\INVIX.sln -c Release
 ```
