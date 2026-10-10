@@ -15,6 +15,14 @@ the operations log are all drawn at runtime.
 
 ---
 
+## Live view
+
+A real capture of the running application - every pixel on screen is drawn at runtime:
+
+![INVI X panel](docs/screenshot.png)
+
+---
+
 ## Panel
 
 A compact `620 x 400` borderless terminal panel (`WindowChrome`, native resize border, no
