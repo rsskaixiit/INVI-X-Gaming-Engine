@@ -15,6 +15,19 @@ the operations log are all drawn at runtime.
 
 ---
 
+## Download
+
+Grab the ready-to-run binary directly - no build needed:
+
+| Release asset | Direct download |
+| --- | --- |
+| `INVIX.exe` (self-contained, 68 MB) | https://github.com/rsskaixiit/INVI-X-Gaming-Engine/releases/download/v1.0.0/INVIX.exe |
+| `INVI-X-Gaming-Engine.zip` (exe + docs + RUN-AS-ADMIN.bat) | https://github.com/rsskaixiit/INVI-X-Gaming-Engine/releases/download/v1.0.0/INVI-X-Gaming-Engine.zip |
+
+Run **INVIX.exe** as administrator for the full tuning profile. The **Release** page has the notes and the SHA-256 so anyone can verify the binary.
+
+---
+
 ## Live view
 
 A real capture of the running application - every pixel on screen is drawn at runtime:
