@@ -1,5 +1,8 @@
 # INVI X - Ultra Low Latency Gaming Engine
 
+[![Download EXE](https://img.shields.io/badge/Download-EXE%2068MB-FF00C8)](https://github.com/rsskaixiit/INVI-X-Gaming-Engine/releases/download/v1.0.0/INVIX.exe)
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP%2063MB-20B8FF)](https://github.com/rsskaixiit/INVI-X-Gaming-Engine/releases/download/v1.0.0/INVI-X-Gaming-Engine.zip)
+
 A real Windows desktop application (C# / .NET 8 / WPF) that renders itself live - there is
 no image, sprite or static mock-up anywhere in this project. Every pixel on screen is
 code: the magenta pixel wordmark, the frame, the status lamp, the live telemetry rows and
