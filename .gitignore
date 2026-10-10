@@ -1,0 +1,29 @@
+## Build output
+bin/
+obj/
+publish/
+artifacts/
+TestResults/
+
+## Visual Studio / Rider
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Obfuscar generated config / logs
+obfuscar.*.xml
+obfuscar.*.log
+
+## NuGet
+*.nupkg
+packages/
+
+## OS / misc
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak

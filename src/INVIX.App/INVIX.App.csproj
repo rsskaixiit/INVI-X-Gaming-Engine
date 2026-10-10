@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Platforms>AnyCPU;x64</Platforms>
+    <AssemblyName>INVIX</AssemblyName>
+    <RootNamespace>Invix</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Product>INVI X - Ultra Low Latency Gaming Engine</Product>
+    <Company>INVI X</Company>
+    <Description>INVI X - Ultra Low Latency Gaming Engine (precision mode / gaming edition).</Description>
+    <Copyright>INVI X</Copyright>
+    <Deterministic>true</Deterministic>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Obfuscate)' == 'true'">
+    <DefineConstants>$(DefineConstants);INVIX_HARDENED</DefineConstants>
+  </PropertyGroup>
+
+  <Target Name="InvixObfuscate" AfterTargets="Build" Condition="'$(Obfuscate)' == 'true'">
+    <Message Importance="high" Text="[INVI X] Obfuscating $(TargetFileName) with Obfuscar ..." />
+    <Exec Command="&quot;$(ObfuscarTool)&quot; &quot;$(ObfuscarConfig)&quot;" />
+    <ItemGroup>
+      <InvixObfuscatedFile Include="$(ObfuscarOutDir)\*.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(InvixObfuscatedFile)" DestinationFolder="$(TargetDir)" OverwriteReadOnlyFiles="true" />
+    <RemoveDir Directories="$(ObfuscarOutDir)" />
+    <Exec Condition="'$(IntegrityPatcher)' != ''" Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(IntegrityPatcher)&quot; -AssemblyPath &quot;$(TargetPath)&quot;" />
+    <Copy Condition="'@(IntermediateAssembly)' != ''" SourceFiles="$(TargetPath)" DestinationFiles="@(IntermediateAssembly)" OverwriteReadOnlyFiles="true" />
+  </Target>
+
+</Project>
